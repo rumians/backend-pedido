@@ -18,11 +18,11 @@ class Pedido(models.Model):
     def __str__(self):
         return f"{self.data_pedido} - {self.valor_total} - {self.id_Cliente.nome}"
     
-class ItenPedido(models.Model):
+class ItemPedido(models.Model):
     produto = models.CharField(max_length=100)
     quantidade = models.CharField(max_length=20)
     preco_unitario = models.CharField(max_length=20)
     id_Pedido = models.ForeignKey(Pedido, on_delete=models.PROTECT)
 
     def __str__(self):
-        return f"{self.produto} - {self.quantidade} - {self.preco_unitario} - {self.id_Pedido}"
+        return f"{self.produto} - {self.quantidade} - {self.preco_unitario}"
